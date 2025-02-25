@@ -28,10 +28,20 @@ async function processMarkdown(filePath) {
 }
 
 async function buildPage(templateName, content, outputPath) {
-  const template = await readTemplate(templateName);
-  const result = template
-    .replace('{{title}}', content.attributes.title || 'My Site')
-    .replace('{{content}}', content.html);
+  // First read the base template
+  const baseTemplate = await readTemplate('base.html');
+  
+  // Then read and process the page template
+  const pageTemplate = await readTemplate(templateName);
+  
+  // Replace content in page template
+  const pageContent = pageTemplate.replace('{{content}}', content.html);
+  
+  // Replace variables in base template
+  const result = baseTemplate
+    .replace('{{title}}', content.attributes.title || 'Static Site')
+    .replace('{{description}}', content.attributes.description || '')
+    .replace('{{content}}', pageContent);
   
   await fs.writeFile(outputPath, result);
 }
