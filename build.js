@@ -27,6 +27,12 @@ async function processMarkdown(filePath) {
   return { attributes, html };
 }
 
+async function processHTML(filePath) {
+  const content = await fs.readFile(filePath, 'utf-8');
+  const { attributes, body } = frontMatter(content);
+  return { attributes, html: body };
+}
+
 async function buildPage(templateName, content, outputPath) {
   // First read the base template
   const baseTemplate = await readTemplate('base.html');
@@ -57,11 +63,14 @@ async function build() {
     path.join(DIST_DIR, 'css', 'style.css')
   );
 
-  // Process markdown files
+  // Process all content files
   const files = await fs.readdir(CONTENT_DIR);
   for (const file of files) {
-    if (path.extname(file) === '.md') {
-      const content = await processMarkdown(path.join(CONTENT_DIR, file));
+    const ext = path.extname(file);
+    if (ext === '.md' || ext === '.html') {
+      const content = ext === '.md' 
+        ? await processMarkdown(path.join(CONTENT_DIR, file))
+        : await processHTML(path.join(CONTENT_DIR, file));
       const outputPath = path.join(
         DIST_DIR,
         file.replace('.md', '.html')
