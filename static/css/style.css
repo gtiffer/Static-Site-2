@@ -116,6 +116,130 @@ p {
     text-align: center;
 }
 
+.footer-made-with {
+    margin-top: 2rem;
+    color: #6B7280;
+    font-size: 0.875rem;
+}
+
+.footer-made-with p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.footer-made-with .icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* Contact Panel */
+.contact-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background-color: #111827;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.contact-panel.open {
+    right: 0;
+}
+
+.contact-form {
+    padding: 2rem;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-family: 'Charter', 'Georgia', serif;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: #9CA3AF;
+    font-size: 1.125rem;
+    font-family: 'Charter', 'Georgia', serif;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: rgba(55, 65, 81, 0.5);
+    border: 1px solid rgba(75, 85, 99, 0.5);
+    color: #fff;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #6B7280;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #6B7280;
+    background-color: rgba(55, 65, 81, 0.7);
+}
+
+.form-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+    padding-top: 2rem;
+}
+
+.btn-send,
+.btn-cancel {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.btn-send {
+    background-color: #60A5FA;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn-cancel {
+    background-color: #374151;
+    color: #9CA3AF;
+}
+
+.btn-send:hover {
+    background-color: #3B82F6;
+}
+
+.btn-cancel:hover {
+    background-color: #4B5563;
+    color: #fff;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {

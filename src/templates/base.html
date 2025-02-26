@@ -21,10 +21,53 @@
         {{content}}
     </main>
 
+    <!-- Contact Panel -->
+    <div class="contact-panel" id="contactPanel">
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form id="messageForm">
+                <div class="form-group">
+                    <label for="email">From:</label>
+                    <input type="email" id="email" placeholder="Enter Your Email Address" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="8" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-send">Send Email</button>
+                    <button type="button" class="btn-cancel" onclick="closeContactPanel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Static Site. All rights reserved.</p>
+            <div class="footer-made-with">
+                <p>Made with <span class="icon">🤖</span> + <span class="icon">❤️</span> in MN <span class="icon">📍</span></p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        function openContactPanel() {
+            document.getElementById('contactPanel').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactPanel() {
+            document.getElementById('contactPanel').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('messageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the email using a backend service
+            // For now, we'll just close the panel
+            closeContactPanel();
+        });
+    </script>
 </body>
 </html> 
