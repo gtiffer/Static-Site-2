@@ -3,11 +3,10 @@
     --text-color: #2d3748;
     --link-color: #2d3748;
     --background-color: #f7fafc;
-    --accent-color: #48bb78;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Charter', 'Georgia', serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -17,24 +16,25 @@ body {
 
 /* Container */
 .container {
-    max-width: 580px;
+    max-width: 460px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem 2rem;
 }
 
 /* Navigation */
 .nav {
     padding: 2rem 0;
     border-bottom: 1px solid #e2e8f0;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .nav-content {
-    max-width: 580px;
+    max-width: 460px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 2rem;
+    padding: 0 2rem;
 }
 
 .nav-link {
@@ -50,26 +50,36 @@ body {
 
 /* Typography */
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--text-color);
 }
 
 p {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 /* Links */
 .text-link {
-    color: var(--link-color);
+    color: var(--text-color);
     text-decoration: none;
     border-bottom: 1px solid transparent;
 }
 
 .text-link:hover {
     border-bottom: 1px solid var(--link-color);
+}
+
+.work-highlight {
+    font-weight: 600;
+}
+
+.work-highlight:hover {
+    color: #4a5568;
+    border-bottom: 1px solid #4a5568;
 }
 
 .links {
@@ -79,26 +89,30 @@ p {
     margin: 2rem 0;
 }
 
-.green {
-    color: var(--accent-color);
-}
-
 /* Work list */
 .work-list {
-    list-style: none;
-    padding: 0;
+    list-style: disc;
+    padding-left: 1.5rem;
     margin: 2rem 0;
 }
 
 .work-list li {
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 /* Divider */
 .divider {
     margin: 3rem 0;
     color: #718096;
+    text-align: center;
+}
+
+/* Footer */
+.footer-content {
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 2rem;
     text-align: center;
 }
 
