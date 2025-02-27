@@ -253,4 +253,91 @@ p {
     .nav-content {
         padding: 0 1.5rem;
     }
+}
+
+/* Adventure Links */
+.adventure-links {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.adventure-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.adventure-links a:hover {
+    color: #666;
+}
+
+.scoreboard-link {
+    color: #4CAF50 !important;
+}
+
+/* Scoreboard Page */
+.scoreboard-page {
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.scoreboard-page h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.stats-section {
+    margin-bottom: 3rem;
+}
+
+.stats-section h2 {
+    color: #444;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 1rem;
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .scoreboard-page {
+        padding: 1rem;
+    }
+    
+    .scoreboard-page h1 {
+        font-size: 2rem;
+    }
+    
+    .stats-section h2 {
+        font-size: 1.5rem;
+    }
 } 
